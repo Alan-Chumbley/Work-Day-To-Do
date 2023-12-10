@@ -21,30 +21,42 @@ var timeBox = document.querySelector('.timeBox');
 for (var i = 10; i < 19; i++){
     // now create a for loop with times
 var timeBlockDiv = document.createElement('div');
-timeBlockDiv.classList.add('timeBlock');
+timeBlockDiv.setAttribute('class','timeBlock');
 
 var hourDiv = document.createElement('div');
-hourDiv.classList.add('hour');
+hourDiv.setAttribute("class","hour" );
+//add  attributes and styling to created elements
 var hoursP = document.createElement('p');
 hoursP.textContent= i + ':00⏲️';
+hoursP.setAttribute('style', 'margin-top: 10px');
+
 hourDiv.appendChild(hoursP);
 
+
 var statusDiv = document.createElement('div');
-statusDiv.classList.add('status');
+statusDiv.setAttribute('class','status');
 var statusNotes = document.createElement('input');
 statusNotes.setAttribute('placeholder', 'notes');
+statusNotes.setAttribute("style", "width:75%; min-height:40px; border-radius:6px ");
+
 statusDiv.appendChild(statusNotes);
 
 var saveBtn = document.createElement('button');
-saveBtn.classList.add('saveBtn');
+saveBtn.setAttribute('class','saveBtn');
 saveBtn.textContent = 'save';
 
+// add code in a row section/timeBlock.
 timeBox.appendChild(timeBlockDiv);
 timeBlockDiv.appendChild(hourDiv);
 timeBlockDiv.appendChild(statusDiv);
 timeBlockDiv.appendChild(saveBtn);
 
 
+
+
+
+
+//set attribute
 // var timeBox = document.querySelector('.timeBox');
 
 // var timeBlockDiv = document.createElement('DIV')
@@ -62,5 +74,21 @@ timeBlockDiv.appendChild(saveBtn);
 }}
 // now create a for loop with times
 addTimeBlock();
+//store input notes
+// var storageInput = document.querySelector('.notes');
+// var saving = document.querySelector('saveBtn');
+// var storedInput = localStorage.getItem('noteInput');
+// if (storageInput){
+    
+// }
 
-var save = 
+// storageInput.addEventListener('input', letter=>{
+//     storageInput.textContent = letter.target.value;
+//     console.log(letter.target.value)
+// })
+// //set item to local storage
+// var saveToLocalStorage = () =>{
+//     localStorage.setItem('noteInput', storageInput.textContent);
+
+// }
+// saving.addEventListener('click', saveToLocalStorage);
