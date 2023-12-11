@@ -53,6 +53,17 @@ timeBlockDiv.appendChild(saveBtn);
 
 
 
+//present ttime
+var timeNow = new Date().getHours();
+console.log(timeNow);
+// add time = i loop 
+if (timeNow === i){
+    timeBlockDiv.setAttribute("class", "present");
+}else if (timeNow < i){
+    timeBlockDiv.setAttribute("class", "future");
+} else{
+    timeBlockDiv.setAttribute("class","past");
+}
 
 
 
