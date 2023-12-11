@@ -60,6 +60,7 @@ console.log(timeNow);
 if (timeNow === i){
     timeBlockDiv.setAttribute("class", "present");
 }else if (timeNow < i){
+    //change css
     timeBlockDiv.setAttribute("class", "future");
 } else{
     timeBlockDiv.setAttribute("class","past");
@@ -103,3 +104,12 @@ addTimeBlock();
 
 // }
 // saving.addEventListener('click', saveToLocalStorage);
+// var saving = document.querySelector('.notes');
+// var toSave = document.querySelector('saveBtn');
+// saving.addEventListener('keydown', function(pikachu){
+//     pikachu.preventDefault();
+//     console.log("user Input" + pikachu);
+
+//     localStorage.setItem("pikachu", JSON.stringify(pikachu));
+//     var userNotes = JSON.parse(localStorage.getItem("pikachu"));
+// })
