@@ -37,6 +37,7 @@ var statusDiv = document.createElement('div');
 statusDiv.setAttribute('class','status');
 var statusNotes = document.createElement('input');
 statusNotes.setAttribute('placeholder', 'notes');
+statusNotes.setAttribute('class', 'notes');
 statusNotes.setAttribute("style", "width:75%; min-height:40px; border-radius:6px ");
 
 statusDiv.appendChild(statusNotes);
@@ -66,7 +67,15 @@ if (timeNow === i){
     timeBlockDiv.setAttribute("class","past");
 }
 
+var inputEl = document.querySelectorAll('.notes')
+//console.log(inputEl);
 
+inputEl.forEach(element => {
+   // console.log(element);
+   //console.log(element.parentElement.previousElementSibling.textContent);
+  var keyVal = element.parentElement.previousElementSibling.textContent;
+    element.value  = localStorage.getItem(keyVal)
+});
 
 //set attribute
 // var timeBox = document.querySelector('.timeBox');
@@ -84,6 +93,20 @@ if (timeNow === i){
 // timeBlockDiv.appendChild(saveBtn);
 
 }}
+
+
+
+document.addEventListener('click', function(event){
+  //  console.log(event);
+if(event.target.className == 'saveBtn'){
+   // console.log(event.target.previousElementSibling.children[0].value);
+   //console.log(event.target.previousElementSibling.previousElementSibling.textContent);
+   var keyVal = event.target.previousElementSibling.previousElementSibling.textContent;
+    var inputVal = event.target.previousElementSibling.children[0].value;
+    localStorage.setItem(keyVal, inputVal);
+};
+}
+)
 // now create a for loop with times
 addTimeBlock();
 //store input notes
